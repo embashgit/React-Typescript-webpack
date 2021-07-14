@@ -26,6 +26,9 @@ NIL
 - Prettier
 - Webpack v5
 - React V17
+- eslint
+- babel
+- Docker
 - Typescript V4
 
 
@@ -52,6 +55,21 @@ To deploy this app follow the steps below:
 - Start the app using `npm start`.
 
 A `Dockerfile` is also provided for container creation.
+ `FROM node:12.13.1-alpine
+
+RUN npm install webpack -g
+
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+
+ENV NODE_ENV=production
+ENV PORT=5001
+
+CMD ["npm", "start" ]
+EXPOSE 5001
+`
 ​
 ## Versioning [Dev]
 Version__________No Description of change___________Date
@@ -62,6 +80,7 @@ Version__________No Description of change___________Date
 
 ## Authors [Dev]
 -  **Ibrahim M Bashir**
+- Github Username: embashgit
 ​
 ## License
 ​
@@ -70,4 +89,4 @@ License - see the [LICENSE.md](LICENSE.md) file for
 details
 ​
 ## Acknowledgments
-- Kehinde Odewole (UX Designer)
+- 
